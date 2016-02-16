@@ -75,7 +75,7 @@ namespace Worksheet1
             Console.WriteLine("Enter age of student4: ");
             age4 = Convert.ToInt32(Console.ReadLine());
 
-            int averageAge = (age1 + age2 + age3 + age4) / 4;
+            double averageAge = (age1 + age2 + age3 + age4) / 4;
 
             Console.WriteLine(String.Format("The average age is {0}", averageAge));
             Console.ReadLine();
@@ -173,14 +173,42 @@ namespace Worksheet1
             Console.ReadLine();
         }
 
+    
+
         static void Main(string[] args)
         {
-            question1();
-            question2();
-            question3();
-            question4();
-            question5();
+            //question1();
+
+            //question2();
+            //question3();
+            //question4();
+            //question5();
             
+            //menu
+            int choice = 0;
+            
+            while(choice != 6)
+            { 
+                Console.WriteLine("Which question would you like to try?, choose 6 to quit");
+                choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1: question1();
+                            break;
+                    case 2: question2();
+                            break;
+                    case 3: question3();
+                            break;
+                    case 4: question4();
+                            break;
+                    case 5: question5();
+                            break;
+                    case 6: break;
+                    default: Console.WriteLine("Invalid option");
+                             break;
+                }
+
+            }
         }
     }
 }
