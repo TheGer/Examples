@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worksheet1", "Worksheet1\Wo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example2", "Example2\Example2.csproj", "{5C36B013-518D-423F-9B29-2B3843B9FC7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example3", "Example3\Example3.csproj", "{69A7DF2F-7234-4EA5-97E5-750AAC0532DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectangleExample", "RectangleExample\RectangleExample.csproj", "{C96E587F-58A4-4311-A040-D037929BE616}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{5C36B013-518D-423F-9B29-2B3843B9FC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C36B013-518D-423F-9B29-2B3843B9FC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C36B013-518D-423F-9B29-2B3843B9FC7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69A7DF2F-7234-4EA5-97E5-750AAC0532DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69A7DF2F-7234-4EA5-97E5-750AAC0532DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69A7DF2F-7234-4EA5-97E5-750AAC0532DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69A7DF2F-7234-4EA5-97E5-750AAC0532DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C96E587F-58A4-4311-A040-D037929BE616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C96E587F-58A4-4311-A040-D037929BE616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C96E587F-58A4-4311-A040-D037929BE616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C96E587F-58A4-4311-A040-D037929BE616}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
