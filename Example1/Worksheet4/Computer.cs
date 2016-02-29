@@ -42,6 +42,11 @@ namespace Worksheet4
             return Numberoffaults;
         }
 
+        public int CompareTo(Computer other)
+        {
+            return this.Numberoffaults.CompareTo(other.Numberoffaults);
+        }
+
         public override string ToString()
         {
             string output = "";
