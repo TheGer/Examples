@@ -15,7 +15,7 @@ namespace Worksheet4
             while (option!= 7)
             { 
                 Console.WriteLine(menutext);
-                option = Convert.ToInt32(Console.ReadLine());
+                option = Convert.ToInt32(Console.ReadKey(false).KeyChar.ToString());
                 switch (option)
                 {
                     case 1:
@@ -68,12 +68,19 @@ namespace Worksheet4
                 }
             }
 
-            Console.WriteLine("Enter new classroom name: ("+roomscounter+"/"+rooms.Length+") slots available ");
+            Console.WriteLine("Enter new classroom name: ("+roomscounter+"/"+rooms.Length+") slots taken ");
             string classroomname = Convert.ToString(Console.ReadLine());
             Console.WriteLine("Does the classroom have a projector? ");
             bool projector = yesno();
             //create a new classroom with an empty array of computers
             Classroom newClassroom = new Classroom(classroomname, projector,new Computer[6]);
+
+            //Computer[] testArray = new Computer[20];
+
+            //newClassroom.Computersinclassroom = testArray;
+
+
+
             rooms[roomscounter] = newClassroom;
         }
 
@@ -85,8 +92,11 @@ namespace Worksheet4
             
             foreach (Classroom cl in rooms)
             {
-                Console.WriteLine(counter + ") " + cl.Classroomname + " ");
-                counter++;
+                if (cl!=null)
+                { 
+                    Console.WriteLine(counter + ") " + cl.Classroomname + " ");
+                    counter++;
+                }
             }
             Console.WriteLine("Select a classroom:");
             int classroomchoice = Convert.ToInt32(Console.ReadLine());
@@ -142,13 +152,54 @@ namespace Worksheet4
 
         static void opt6(Classroom[] rooms)
         {
+            //1. create an array containing all the computers in all the rooms
+            Computer[] allComputers = new Computer[1];
+
+            int totalComputerSlots = 0;
+
+            foreach(Classroom c in rooms)
+            {
+                if (c != null)
+                    totalComputerSlots += c.Computersinclassroom.Length;
+            }
+            //total number of computers = arrayLength
+            allComputers = new Computer[totalComputerSlots];
+
+            int counter = 0;
+
+            foreach (Classroom c in rooms)
+            {
+                if (c!=null)
+                { 
+                    foreach(Computer cm in c.Computersinclassroom)
+                    {
+                        if (cm!=null)
+                        {
+                            allComputers[counter] = cm;
+                            counter++;
+                        }
+                    }
+                }
+
+            }
+            
+            Array.Sort(allComputers);
+
+            foreach (Computer c in allComputers)
+            {
+                Console.WriteLine(c);
+            }
+            Console.ReadLine();
+
+
+
 
         }
 
         static bool yesno()
         {
             Console.WriteLine("y/n?");
-            string input = Convert.ToString(Console.ReadKey().KeyChar);
+            string input = Convert.ToString(Console.ReadKey(false).KeyChar);
             bool accept = false;
 
             if (input == "y")
@@ -190,10 +241,10 @@ namespace Worksheet4
             //we will load the menu of the application 
             //here
 
-            Computer PC1 = new Computer("L113-T", "OK", 0);
-            Computer PC2 = new Computer("L113-1", "OK", 0);
-            Computer PC3 = new Computer("L113-2", "NOT OK", 3);
-            Computer PC4 = new Computer("L113-2", "NOT OK", 3);
+            Computer PC1 = new Computer("L113-", "OK", 5);
+            Computer PC2 = new Computer("L11", "OK", 2);
+            Computer PC3 = new Computer("L1", "NOT OK", 3);
+            Computer PC4 = new Computer("L113-8", "NOT OK", 3);
 
             Computer[] computers = new Computer[4];
 
@@ -202,17 +253,22 @@ namespace Worksheet4
             computers[2] = PC3;
             computers[3] = PC4;
 
+            
+            //myClassroom = L113
             Classroom myClassroom = new Classroom("L113", true,computers);
 
             Computer[] computers2 = new Computer[2];
 
             computers2[0] = new Computer("L114-1", "OK", 1);
-            computers2[1] = new Computer("L114-2", "OK", 2);
+            computers2[1] = new Computer("L114-2", "OK", 5);
 
+            //myClassroom2 = L114
             Classroom myClassroom2 = new Classroom("L114", true, computers2);
 
-            Classroom[] allRooms = new Classroom[3];
+            //max classrooms = 4
+            Classroom[] allRooms = new Classroom[5];
 
+            //first 2 classrooms
             allRooms[0] = myClassroom;
             allRooms[1] = myClassroom2;
 
@@ -228,7 +284,8 @@ namespace Worksheet4
 
             Menu(allRooms, menu);
 
-
+            
+            
             
             Console.ReadLine();
         }

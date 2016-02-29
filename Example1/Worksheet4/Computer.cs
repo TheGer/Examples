@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Worksheet4
 {
-    class Computer
+    class Computer:IComparable
     {
         string _computername;
 
@@ -42,11 +42,7 @@ namespace Worksheet4
             return Numberoffaults;
         }
 
-        public int CompareTo(Computer other)
-        {
-            return this.Numberoffaults.CompareTo(other.Numberoffaults);
-        }
-
+       
         public override string ToString()
         {
             string output = "";
@@ -57,6 +53,16 @@ namespace Worksheet4
             output += "==========================================\n";
             return output;
         }
+
+
+        public int CompareTo(object other)
+        {
+            Computer referenceToOtherComputer = (Computer)other;
+            return this.Numberoffaults.CompareTo(referenceToOtherComputer.Numberoffaults);
+
+        }
+
+        
 
     }
 }
