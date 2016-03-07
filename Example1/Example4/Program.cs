@@ -76,7 +76,7 @@ namespace Example4
             }
             Console.ReadLine();
             //all the different random numbers
-
+            
           
             foreach (RandomNumber r in allTheNumbers)
             {
