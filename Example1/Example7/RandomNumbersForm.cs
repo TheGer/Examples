@@ -32,18 +32,24 @@ namespace Example7
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
+
             DataGridViewCell cellStyle = new DataGridViewTextBoxCell();
             cellStyle.Style.BackColor = Color.Wheat;
+
             dataGridView1.Columns.Add(new DataGridViewColumn(cellStyle));
+            
             foreach (int i in numbList)
                 dataGridView1.Rows.Add(i.ToString());
         }
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void generateButton_Click(object sender, EventArgs e)
         {
+            Program.updateRandomNumbers(numbList);
             updateDataGrid();
+          
+
         }
 
         private void sortButton_Click(object sender, EventArgs e)
@@ -63,6 +69,11 @@ namespace Example7
         {
             numbList = numbList.Distinct().ToList<int>();
             updateDataGrid();
+        }
+
+        private void RandomNumbersForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,6 +10,23 @@ namespace Example7
     
     class Program
     {
+
+        
+
+        public static void updateRandomNumbers(List<int> ListOfNumbers)
+        {
+            Random randomGen = new Random();
+            //create a list of 10 random numbers
+
+            ListOfNumbers.Clear();
+
+            for (int i = 0; i < 10; i++)
+            {
+                int randomNumber = randomGen.Next(1, 10);
+                ListOfNumbers.Add(randomNumber);
+            }
+        }
+
         [STAThread]
         static void Main(string[] args)
         {
@@ -19,15 +36,11 @@ namespace Example7
             //using a List of type int
             List<int> ListOfNumbers = new List<int>();
             //instantiate random number generator
-            Random randomGen = new Random();
+           
 
+            updateRandomNumbers(ListOfNumbers);
 
-            //create a list of 10 random numbers
-            for(int i=0;i<10;i++)
-            {
-                int randomNumber = randomGen.Next(1, 10);
-                ListOfNumbers.Add(randomNumber);
-            }
+           
 
 
             RandomNumbersForm form = new RandomNumbersForm(ListOfNumbers);

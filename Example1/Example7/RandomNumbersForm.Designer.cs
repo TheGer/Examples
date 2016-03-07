@@ -56,10 +56,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(254, 155);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel1
@@ -111,7 +115,7 @@
             this.generateButton.TabIndex = 0;
             this.generateButton.Text = "Generate";
             this.generateButton.UseVisualStyleBackColor = true;
-            this.generateButton.Click += new System.EventHandler(this.button1_Click);
+            this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
             // 
             // RandomNumbersForm
             // 
@@ -121,6 +125,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "RandomNumbersForm";
             this.Text = "RandomNumbersForm";
+            this.Load += new System.EventHandler(this.RandomNumbersForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
