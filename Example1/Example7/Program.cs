@@ -46,6 +46,8 @@ namespace Example7
             RandomNumbersForm form = new RandomNumbersForm(ListOfNumbers);
             Application.Run(form);
 
+
+
             //output
             outputNumbers(ListOfNumbers);
             Console.ReadLine();
