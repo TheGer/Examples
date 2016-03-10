@@ -88,6 +88,8 @@ namespace Example7
 
             //gets the index of the value you are searching for
             Console.WriteLine(ListOfNumbers.FindIndex(n => n == 8));
+
+
             Console.ReadLine();
 
             //gets the biggest number

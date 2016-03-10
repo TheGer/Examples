@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{45E69B23-084A-4805-9CC2-83B0841861A9}</ProjectGuid>
+    <ProjectGuid>{6272508D-E762-4E97-903F-6BA162258EE2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Worksheet5</RootNamespace>
@@ -43,11 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddClassroom.cs">
+    <Compile Include="AddEditClassroom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddClassroom.Designer.cs">
-      <DependentUpon>AddClassroom.cs</DependentUpon>
+    <Compile Include="AddEditClassroom.Designer.cs">
+      <DependentUpon>AddEditClassroom.cs</DependentUpon>
     </Compile>
     <Compile Include="Classroom.cs" />
     <Compile Include="ClassroomsForm.cs">
@@ -64,8 +64,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddClassroom.resx">
-      <DependentUpon>AddClassroom.cs</DependentUpon>
+    <EmbeddedResource Include="AddEditClassroom.resx">
+      <DependentUpon>AddEditClassroom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClassroomsForm.resx">
       <DependentUpon>ClassroomsForm.cs</DependentUpon>

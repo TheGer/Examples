@@ -42,6 +42,22 @@ namespace Worksheet5
             Computersinclassroom = allComputers;
         }
 
+        public Classroom(string v1,bool v2)
+        {
+            Classroomname = v1;
+            Projectoravailable = v2;
+            Computersinclassroom = new List<Computer>();
+        }
+
+        public Classroom() 
+        {
+            Classroomname = "";
+            Projectoravailable = false;
+            Computersinclassroom = new List<Computer>();
+        }
+
+
+     
         public string outputClassroom()
         {
             return "Name of classroom: " + Classroomname + " Projector: " + Projectoravailable;
@@ -59,6 +75,12 @@ namespace Worksheet5
             return output;
 
 
+        }
+
+        public Classroom copyMe()
+        {
+            Classroom outputC = new Classroom(this.Classroomname, this.Projectoravailable, this.Computersinclassroom);
+            return outputC;
         }
     }
 }

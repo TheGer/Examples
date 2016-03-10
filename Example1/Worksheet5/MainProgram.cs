@@ -12,6 +12,13 @@ namespace Worksheet5
 
         public static List<Classroom> rooms;
 
+
+        public static Classroom copyClassroom (Classroom c1)
+        {
+            Classroom copy = new Classroom(c1.Classroomname, c1.Projectoravailable, c1.Computersinclassroom);
+            return copy;
+        }
+
         //static method which will load a menu
         static void Menu(String menutext)
         {

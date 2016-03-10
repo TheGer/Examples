@@ -66,13 +66,51 @@ namespace Worksheet5
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
           //  MessageBox.Show(e.ColumnIndex.ToString() + " " + e.RowIndex.ToString());
-            
-            MessageBox.Show(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            //this event is triggered every time I click a cell 
+            if (e.ColumnIndex==3)
+            {
+                //MessageBox.Show("Delete");
+                string currentRoomName = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+               
+
+                Classroom classtodelete = MainProgram.rooms.Find(croom => croom.Classroomname == currentRoomName);
+
+                //Classroom backupClassroom = classtodelete.copyMe();
+               // Classroom backupClassroom = MainProgram.copyClassroom(classtodelete);
+                MessageBoxButtons confirmButtons = MessageBoxButtons.OKCancel;
+
+                DialogResult result = MessageBox.Show("Are you sure you want to delete?","Delete", confirmButtons);
+
+                if (result == DialogResult.OK)
+                {
+                    MainProgram.rooms.Remove(classtodelete);
+                    updateGrid();
+                }
+              //  MessageBox.Show(backupClassroom.ToString());
+            }
+            if (e.ColumnIndex == 1)
+            {
+                string currentRoomName = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+                Classroom classtoupdate = MainProgram.rooms.Find(croom => croom.Classroomname == currentRoomName);
+
+
+                AddEditClassroom addC = new AddEditClassroom(classtoupdate);
+                addC.ShowDialog(this);
+            }
+
+
+
+
+
+            //MessageBox.Show();
+            //MessageBox.Show(dataGridView1.CurrentRow.Cells[0].Value.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddClassroom addC = new AddClassroom();
+            AddEditClassroom addC = new AddEditClassroom();
             addC.ShowDialog(this);
            
         }
