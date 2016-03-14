@@ -50,6 +50,12 @@
       <DependentUpon>AddEditClassroom.cs</DependentUpon>
     </Compile>
     <Compile Include="Classroom.cs" />
+    <Compile Include="ClassroomChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassroomChooser.Designer.cs">
+      <DependentUpon>ClassroomChooser.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClassroomsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,7 +63,16 @@
       <DependentUpon>ClassroomsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Computer.cs" />
+    <Compile Include="GamingPC.cs" />
+    <Compile Include="Laptop.cs" />
     <Compile Include="MainProgram.cs" />
+    <Compile Include="ManageComputersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageComputersForm.Designer.cs">
+      <DependentUpon>ManageComputersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Moveable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,8 +82,14 @@
     <EmbeddedResource Include="AddEditClassroom.resx">
       <DependentUpon>AddEditClassroom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClassroomChooser.resx">
+      <DependentUpon>ClassroomChooser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClassroomsForm.resx">
       <DependentUpon>ClassroomsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageComputersForm.resx">
+      <DependentUpon>ManageComputersForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

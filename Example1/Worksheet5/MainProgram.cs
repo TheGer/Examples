@@ -242,6 +242,8 @@ namespace Worksheet5
             Computer PC2 = new Computer("L11", "OK", 2);
             Computer PC3 = new Computer("L1", "NOT OK", 3);
             Computer PC4 = new Computer("L113-8", "NOT OK", 3);
+            Laptop PC5 = new Laptop("L113-9", "NOT OK", 3);
+
 
             List<Computer> computers = new List<Computer>();
 
@@ -249,6 +251,7 @@ namespace Worksheet5
             computers.Add(PC2);
             computers.Add(PC3);
             computers.Add(PC4);
+            computers.Add(PC5);
             
             //myClassroom = L113
             Classroom myClassroom = new Classroom("L113", true,computers);
