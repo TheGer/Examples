@@ -30,6 +30,11 @@ namespace Worksheet5
             set { _numberoffaults = value; }
         }
 
+       public Computer()
+        {
+
+        }
+
         public Computer(string cname,string status,int faults)
         {
             Computername = cname;

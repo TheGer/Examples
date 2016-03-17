@@ -23,6 +23,7 @@ namespace Worksheet5
             dataGridView1.Rows.Clear();
             dataGridView1.Columns.Clear();
 
+            //style for classroom name
             DataGridViewCell cellStyle = new DataGridViewTextBoxCell();
             cellStyle.Style.BackColor = Color.Wheat;
 
@@ -38,20 +39,23 @@ namespace Worksheet5
 
             updateButtonColumn.UseColumnTextForButtonValue = true;
 
-            DataGridViewButtonColumn viewComputersButtonColumn = new DataGridViewButtonColumn();
-            viewComputersButtonColumn.Text = "View computers";
+            DataGridViewButtonColumn manageComputersButtonColumn = new DataGridViewButtonColumn();
+            manageComputersButtonColumn.Text = "Manage computers";
 
-            viewComputersButtonColumn.UseColumnTextForButtonValue = true;
+            manageComputersButtonColumn.UseColumnTextForButtonValue = true;
 
             dataGridView1.Columns.Add(new DataGridViewColumn(cellStyle));
+            dataGridView1.Columns.Add(new DataGridViewCheckBoxColumn());
+
+
 
             dataGridView1.Columns.Add(updateButtonColumn);
-            dataGridView1.Columns.Add(viewComputersButtonColumn);
+            dataGridView1.Columns.Add(manageComputersButtonColumn);
             dataGridView1.Columns.Add(deleteButtonColumn);
 
 
             foreach (Classroom classroom in MainProgram.rooms)
-                dataGridView1.Rows.Add(classroom.Classroomname);
+                dataGridView1.Rows.Add(classroom.Classroomname,classroom.Projectoravailable);
         }
 
         private void ClassroomsForm_Load(object sender, EventArgs e)
@@ -67,17 +71,13 @@ namespace Worksheet5
         {
           //  MessageBox.Show(e.ColumnIndex.ToString() + " " + e.RowIndex.ToString());
             //this event is triggered every time I click a cell 
-            if (e.ColumnIndex==3)
+            string currentRoomName = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            
+            if (e.ColumnIndex==4)
             {
-                //MessageBox.Show("Delete");
-                string currentRoomName = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-
-               
-
+                //delete classroom
                 Classroom classtodelete = MainProgram.rooms.Find(croom => croom.Classroomname == currentRoomName);
 
-                //Classroom backupClassroom = classtodelete.copyMe();
-               // Classroom backupClassroom = MainProgram.copyClassroom(classtodelete);
                 MessageBoxButtons confirmButtons = MessageBoxButtons.OKCancel;
 
                 DialogResult result = MessageBox.Show("Are you sure you want to delete?","Delete", confirmButtons);
@@ -87,18 +87,27 @@ namespace Worksheet5
                     MainProgram.rooms.Remove(classtodelete);
                     updateGrid();
                 }
-              //  MessageBox.Show(backupClassroom.ToString());
+              
             }
-            if (e.ColumnIndex == 1)
+            if (e.ColumnIndex == 2)
             {
-                string currentRoomName = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-
+                //update classroom
+              
                 Classroom classtoupdate = MainProgram.rooms.Find(croom => croom.Classroomname == currentRoomName);
 
 
                 AddEditClassroom addC = new AddEditClassroom(classtoupdate);
                 addC.ShowDialog(this);
             }
+            if (e.ColumnIndex == 3)
+            {
+                //manage classroom computers
+                Classroom classtoupdate = MainProgram.rooms.Find(croom => croom.Classroomname == currentRoomName);
+
+                ManageComputersForm manageCompForm = new ManageComputersForm(classtoupdate);
+                manageCompForm.ShowDialog();
+            }
+
 
 
 

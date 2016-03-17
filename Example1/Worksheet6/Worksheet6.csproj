@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6272508D-E762-4E97-903F-6BA162258EE2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{2752D441-4B4D-4952-81FD-BF13CA3D3198}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Worksheet5</RootNamespace>
-    <AssemblyName>Worksheet4</AssemblyName>
+    <RootNamespace>Worksheet6</RootNamespace>
+    <AssemblyName>Worksheet6</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,63 +34,53 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEditClassroom.cs">
+    <Compile Include="Decagon.cs" />
+    <Compile Include="Rectangle.cs" />
+    <Compile Include="Shape.cs" />
+    <Compile Include="ShapesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEditClassroom.Designer.cs">
-      <DependentUpon>AddEditClassroom.cs</DependentUpon>
+    <Compile Include="ShapesForm.Designer.cs">
+      <DependentUpon>ShapesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classroom.cs" />
-    <Compile Include="ClassroomChooser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClassroomChooser.Designer.cs">
-      <DependentUpon>ClassroomChooser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClassroomsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClassroomsForm.Designer.cs">
-      <DependentUpon>ClassroomsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Computer.cs" />
-    <Compile Include="GamingPC.cs" />
-    <Compile Include="Laptop.cs" />
-    <Compile Include="MainProgram.cs" />
-    <Compile Include="ManageComputersForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageComputersForm.Designer.cs">
-      <DependentUpon>ManageComputersForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Moveable.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Square.cs" />
+    <Compile Include="Triangle.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ShapesForm.resx">
+      <DependentUpon>ShapesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="AddEditClassroom.resx">
-      <DependentUpon>AddEditClassroom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClassroomChooser.resx">
-      <DependentUpon>ClassroomChooser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClassroomsForm.resx">
-      <DependentUpon>ClassroomsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageComputersForm.resx">
-      <DependentUpon>ManageComputersForm.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
