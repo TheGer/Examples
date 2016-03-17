@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6272508D-E762-4E97-903F-6BA162258EE2}</ProjectGuid>
+    <ProjectGuid>{AA4A9149-D725-42BE-A30A-57252D306B7C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Worksheet5</RootNamespace>
-    <AssemblyName>Worksheet4</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>Revision_GUI</RootNamespace>
+    <AssemblyName>Revision_GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,63 +35,19 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEditClassroom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddEditClassroom.Designer.cs">
-      <DependentUpon>AddEditClassroom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Classroom.cs" />
-    <Compile Include="ClassroomChooser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClassroomChooser.Designer.cs">
-      <DependentUpon>ClassroomChooser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClassroomsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ClassroomsForm.Designer.cs">
-      <DependentUpon>ClassroomsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Computer.cs" />
-    <Compile Include="GamingPC.cs" />
-    <Compile Include="Laptop.cs" />
-    <Compile Include="MainProgram.cs" />
-    <Compile Include="ManageComputersForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageComputersForm.Designer.cs">
-      <DependentUpon>ManageComputersForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Moveable.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="AddEditClassroom.resx">
-      <DependentUpon>AddEditClassroom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClassroomChooser.resx">
-      <DependentUpon>ClassroomChooser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClassroomsForm.resx">
-      <DependentUpon>ClassroomsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageComputersForm.resx">
-      <DependentUpon>ManageComputersForm.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
