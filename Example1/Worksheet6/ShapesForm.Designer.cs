@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.shapeChooserCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.shapeChooserCombo = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.calcAreaButton = new System.Windows.Forms.Button();
-            this.calcPerimeterButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.areaOutputLabel = new System.Windows.Forms.Label();
-            this.perimeterOutputLabel = new System.Windows.Forms.Label();
             this.inputPanel = new System.Windows.Forms.Panel();
             this.inputsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.perimeterOutputLabel = new System.Windows.Forms.Label();
+            this.areaOutputLabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.calcButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.inputPanel.SuspendLayout();
@@ -55,6 +54,17 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(396, 320);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 27);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Select shape:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // shapeChooserCombo
             // 
@@ -73,17 +83,6 @@
             this.shapeChooserCombo.TabIndex = 0;
             this.shapeChooserCombo.SelectedIndexChanged += new System.EventHandler(this.shapeChooserCombo_SelectedIndexChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 27);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Select shape:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.inputPanel);
@@ -91,66 +90,11 @@
             this.panel1.Controls.Add(this.areaOutputLabel);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.calcPerimeterButton);
-            this.panel1.Controls.Add(this.calcAreaButton);
+            this.panel1.Controls.Add(this.calcButton);
             this.panel1.Location = new System.Drawing.Point(3, 30);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(393, 269);
             this.panel1.TabIndex = 2;
-            // 
-            // calcAreaButton
-            // 
-            this.calcAreaButton.Location = new System.Drawing.Point(4, 243);
-            this.calcAreaButton.Name = "calcAreaButton";
-            this.calcAreaButton.Size = new System.Drawing.Size(75, 23);
-            this.calcAreaButton.TabIndex = 0;
-            this.calcAreaButton.Text = "Area";
-            this.calcAreaButton.UseVisualStyleBackColor = true;
-            // 
-            // calcPerimeterButton
-            // 
-            this.calcPerimeterButton.Location = new System.Drawing.Point(86, 242);
-            this.calcPerimeterButton.Name = "calcPerimeterButton";
-            this.calcPerimeterButton.Size = new System.Drawing.Size(75, 23);
-            this.calcPerimeterButton.TabIndex = 1;
-            this.calcPerimeterButton.Text = "Perimeter";
-            this.calcPerimeterButton.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 194);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Perimeter:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 164);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Area:";
-            // 
-            // areaOutputLabel
-            // 
-            this.areaOutputLabel.AutoSize = true;
-            this.areaOutputLabel.Location = new System.Drawing.Point(75, 164);
-            this.areaOutputLabel.Name = "areaOutputLabel";
-            this.areaOutputLabel.Size = new System.Drawing.Size(13, 13);
-            this.areaOutputLabel.TabIndex = 4;
-            this.areaOutputLabel.Text = "0";
-            // 
-            // perimeterOutputLabel
-            // 
-            this.perimeterOutputLabel.AutoSize = true;
-            this.perimeterOutputLabel.Location = new System.Drawing.Point(75, 194);
-            this.perimeterOutputLabel.Name = "perimeterOutputLabel";
-            this.perimeterOutputLabel.Size = new System.Drawing.Size(13, 13);
-            this.perimeterOutputLabel.TabIndex = 5;
-            this.perimeterOutputLabel.Text = "0";
             // 
             // inputPanel
             // 
@@ -163,10 +107,57 @@
             // inputsPanel
             // 
             this.inputsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inputsPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.inputsPanel.Location = new System.Drawing.Point(0, 0);
             this.inputsPanel.Name = "inputsPanel";
             this.inputsPanel.Size = new System.Drawing.Size(386, 144);
             this.inputsPanel.TabIndex = 0;
+            // 
+            // perimeterOutputLabel
+            // 
+            this.perimeterOutputLabel.AutoSize = true;
+            this.perimeterOutputLabel.Location = new System.Drawing.Point(75, 194);
+            this.perimeterOutputLabel.Name = "perimeterOutputLabel";
+            this.perimeterOutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.perimeterOutputLabel.TabIndex = 5;
+            this.perimeterOutputLabel.Text = "0";
+            // 
+            // areaOutputLabel
+            // 
+            this.areaOutputLabel.AutoSize = true;
+            this.areaOutputLabel.Location = new System.Drawing.Point(75, 164);
+            this.areaOutputLabel.Name = "areaOutputLabel";
+            this.areaOutputLabel.Size = new System.Drawing.Size(13, 13);
+            this.areaOutputLabel.TabIndex = 4;
+            this.areaOutputLabel.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 164);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Area:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 194);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Perimeter:";
+            // 
+            // calcButton
+            // 
+            this.calcButton.Location = new System.Drawing.Point(4, 243);
+            this.calcButton.Name = "calcButton";
+            this.calcButton.Size = new System.Drawing.Size(75, 23);
+            this.calcButton.TabIndex = 0;
+            this.calcButton.Text = "Calculate";
+            this.calcButton.UseVisualStyleBackColor = true;
+            this.calcButton.Click += new System.EventHandler(this.calcButton_Click);
             // 
             // ShapesForm
             // 
@@ -196,8 +187,7 @@
         private System.Windows.Forms.Label areaOutputLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button calcPerimeterButton;
-        private System.Windows.Forms.Button calcAreaButton;
+        private System.Windows.Forms.Button calcButton;
         private System.Windows.Forms.FlowLayoutPanel inputsPanel;
     }
 }

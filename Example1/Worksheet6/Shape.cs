@@ -9,6 +9,8 @@ namespace Worksheet6
     class Shape
     {
 
+
+
         public virtual double getArea()
         {
             return 0.0;

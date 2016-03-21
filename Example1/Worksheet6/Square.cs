@@ -10,6 +10,17 @@ namespace Worksheet6
     {
         double side;
 
+        public double Side
+        {
+            get { return side; }
+            set { side = value; }
+        }
+
+        public Square(double side)
+        {
+            this.Side = side;
+        }
+
         public override double getArea()
         {
             return side * side;
