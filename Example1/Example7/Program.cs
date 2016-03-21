@@ -46,6 +46,8 @@ namespace Example7
             RandomNumbersForm form = new RandomNumbersForm(ListOfNumbers);
             Application.Run(form);
 
+
+
             //output
             outputNumbers(ListOfNumbers);
             Console.ReadLine();
@@ -86,6 +88,8 @@ namespace Example7
 
             //gets the index of the value you are searching for
             Console.WriteLine(ListOfNumbers.FindIndex(n => n == 8));
+
+
             Console.ReadLine();
 
             //gets the biggest number
