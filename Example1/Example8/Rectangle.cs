@@ -31,7 +31,7 @@ namespace Example8
 
         public void shootMe()
         {
-           
+            height -= 20;
         }
     }
 }
