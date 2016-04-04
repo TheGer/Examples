@@ -30,7 +30,7 @@ namespace Worksheet6
 
         public override double getPerimeter()
         {
-            return length+breadth * 2;
+            return (length+breadth)*2;
         }
 
     }
