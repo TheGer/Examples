@@ -34,15 +34,15 @@
             // 
             // personsGridView
             // 
-            this.personsGridView.AllowUserToAddRows = false;
-            this.personsGridView.AllowUserToDeleteRows = false;
+            this.personsGridView.AllowDrop = true;
             this.personsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.personsGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.personsGridView.Location = new System.Drawing.Point(0, 0);
             this.personsGridView.Name = "personsGridView";
-            this.personsGridView.ReadOnly = true;
             this.personsGridView.Size = new System.Drawing.Size(284, 262);
             this.personsGridView.TabIndex = 0;
+            this.personsGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.personsGridView_RowLeave);
+            this.personsGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.personsGridView_RowsAdded);
             // 
             // PersonView
             // 
