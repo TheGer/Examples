@@ -36,22 +36,27 @@ namespace Example9
 
         public void updatePerson(PersonModel personToUpdate)
         {
-           
+            PersonModel currentPerson = personsList.Find(person => person.Name == personToUpdate.Name && person.Surname == personToUpdate.Surname);
+            currentPerson = personToUpdate;
+
+            
         }
 
         public void deletePerson(PersonModel personToDelete)
         {
-
+            PersonModel currentPerson = personsList.Find(person => person.Telnumber == personToDelete.Telnumber);
+            personsList.Remove(currentPerson);
         }
 
         public void findPerson(PersonModel personToFind)
         {
-
+            PersonModel currentPerson = personsList.Find(person => person.Telnumber == personToFind.Telnumber);
+            
         }
 
         public void sortPersons()
         {
-
+            personsList.Sort();
         }
 
     }

@@ -48,7 +48,16 @@ namespace Example9
         {
             //sort surname by alphabetical order
             PersonModel otherPerson = (PersonModel)obj;
-            return this.Surname.CompareTo(otherPerson.Surname);
+            
+            //1. sort by surname
+            if (this.Surname != otherPerson.Surname) return this.Surname.CompareTo(otherPerson.Surname);
+            
+            //2. sort by name
+            if (this.Name != otherPerson.Name) return this.Name.CompareTo(otherPerson.Name);
+            
+            //3. sort by telephone number
+            if (this.Telnumber != otherPerson.Telnumber) return this.Telnumber.CompareTo(otherPerson.Telnumber);
+            return -1;
         }
 
 
