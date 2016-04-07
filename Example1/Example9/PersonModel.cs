@@ -8,14 +8,17 @@ namespace Example9
 {
     class PersonModel:IComparable
     {
+        
         string name, surname, telnumber;
 
         public PersonModel(string n,string s,string t,int a)
         {
+    
             this.Name = n;
             this.Surname = s;
             this.Telnumber = t;
             this.Age = a;
+            
         }
 
         public string Name

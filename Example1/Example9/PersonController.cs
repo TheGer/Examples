@@ -36,7 +36,7 @@ namespace Example9
 
         public void updatePerson(PersonModel personToUpdate)
         {
-            PersonModel currentPerson = personsList.Find(person => person.Name == personToUpdate.Name && person.Surname == personToUpdate.Surname);
+            PersonModel currentPerson = personsList.Find(person => person.Telnumber == personToUpdate.Name && person.Surname == personToUpdate.Surname);
             currentPerson = personToUpdate;
 
             
