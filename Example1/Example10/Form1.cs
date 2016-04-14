@@ -10,6 +10,44 @@ using System.Windows.Forms;
 
 namespace Example10
 {
+    
+
+
+    public class Person
+    {
+        public string name;
+        public string surname;
+
+        public Person()
+        {
+            name = "";
+            surname = "";
+        }
+
+        public string getName() 
+        {
+            if (name != "")
+            { 
+            return name;
+            }
+            else
+            {
+                Exception myException = new Exception("M'hemmx Isem");
+                
+                throw myException;
+            }
+        }
+
+
+        public string getSurname()
+        {
+            return surname;
+        }
+
+
+    }
+    
+    
     public partial class Form1 : Form
     {
         public Form1()
@@ -21,16 +59,45 @@ namespace Example10
         {
             try
             {
+                
+                int num1 = 0;
+                int num2 = 10;
 
-                throw new NullReferenceException();
-            }catch(Exception ex)
+                int number = num2 / num1;
+                
+                
+                
+            }
+            catch (DivideByZeroException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
+
+            }
+            catch(Exception ex2)
+            {
+                MessageBox.Show(ex2.Message);
             }
             finally
             {
                 
             }
+
+            try
+            {
+
+                Person p = new Person();
+
+                p.surname = "Borg";
+
+                MessageBox.Show(p.getName());
+ 
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }
