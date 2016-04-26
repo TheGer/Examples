@@ -35,7 +35,9 @@ namespace Example11
             SQLiteDataReader reader = command.ExecuteReader();
             string output = "";
             while (reader.Read())
-                output += reader["firstName"] + " " + reader["secondName"] + " " + reader["telnumber"]+"\r\n";
+                
+                
+                //output += reader["id"]+" "+reader["firstName"] + " " + reader["secondName"] + " " + reader["telnumber"]+"\r\n";
 
             textBox1.Text = output;
             m_dbConnection.Close();
@@ -57,5 +59,6 @@ namespace Example11
 
         //update statement as follows 
         // UPDATE Contact SET firstName = 'new value',secondName = 'new value', telNumber = 'new value' where ID = value
+        // DELETE from Contact WHERE ID = value
     }
 }

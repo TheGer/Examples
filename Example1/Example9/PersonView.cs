@@ -13,12 +13,14 @@ namespace Example9
     public partial class PersonView : Form
     {
 
-        PersonController controller = new PersonController();
+        PersonController controller;
         Boolean initialized = false;
         Boolean added = false;
         public PersonView()
         {
             InitializeComponent();
+            controller = new PersonController("Data Source=" + Application.StartupPath + "/telnumbers.s3db;Version=3;");
+            
             
             //this variable contains the list of persons
 
