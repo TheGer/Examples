@@ -10,6 +10,20 @@ namespace Example8
     {
         string firstName;
         int age;
+        
+        
+        //constructor 1
+        public Person()
+        {
+            FirstName = "John Doe";
+            Age = 0;
+        }
+        //constructor 2
+        public Person(string s,int a)
+        {
+            FirstName = s;
+            Age = a;
+        }
 
         public int Age
         {
@@ -35,8 +49,10 @@ namespace Example8
 
         public string printMe()
         {
+            //return 0;
             return "Person: " + FirstName + " " + LastName;
         }
+
 
         public void shootMe()
         {
