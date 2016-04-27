@@ -27,10 +27,12 @@ namespace Example12
 
         public static void RunExample()
         {
+            //select all records in database
+
             using (var context = new ContactContext())
             {
                 var contacts = from a in context.Contact
-                               where a.FirstName.StartsWith("G")
+                              // where a.FirstName.StartsWith("G")
                                orderby a.FirstName
                                select a;
 
@@ -48,14 +50,31 @@ namespace Example12
                 context.Contact.Add(
                     new Contact
                     {
-                        FirstName = "Gerard",
+                        FirstName = "dsdf",
                         SecondName = "Said",
                         TelNumber = "1234",
                     });
                 context.SaveChanges();
             }
 
-            
+
+            //update a db record
+
+            using (var context = new ContactContext())
+            {
+                var contacts = from a in context.Contact
+                                   // where a.FirstName.StartsWith("G")
+                               orderby a.FirstName
+                               select a;
+
+                foreach (var c in contacts)
+                {
+                    c.FirstName = c.FirstName + " Updated";
+                }
+                context.SaveChanges();
+            }
+
+
         }
 
 
@@ -66,6 +85,7 @@ namespace Example12
     {
         [Column("id")]
         [Key]
+     
         public long? Id { get; set; }
 
        public string FirstName { get; set; }
