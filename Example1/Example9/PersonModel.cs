@@ -1,51 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Example9
 {
+
+    [Table("Contact")]
     class PersonModel:IComparable
     {
-        
-        string name, surname, telnumber;
+        [Column("id")]
+        [Key]
+        public long? Id { get; set; }
+
+
+        //these are set to link to the database field since the class is annotated to 
+        //be linked to the tables 
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string TelNumber { get; set; }
+        //the ? means that the value can be null within the database
+        public int? Age { get; set; }
+
+
+        //the entity framework requires a default empty constructor
+        public PersonModel() { }
+
 
         public PersonModel(string n,string s,string t,int a)
         {
     
-            this.Name = n;
-            this.Surname = s;
-            this.Telnumber = t;
+            this.FirstName = n;
+            this.SecondName = s;
+            this.TelNumber = t;
             this.Age = a;
             
         }
 
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-        public string Surname
-        {
-            get { return surname; }
-            set { surname = value; }
-        }
-
-        public string Telnumber
-        {
-            get { return telnumber; }
-            set { telnumber = value; }
-        }
-        int age;
-
-        public int Age
-        {
-            get { return age; }
-            set { age = value; }
-        }
-
+     
 
         public int CompareTo(object obj)
         {
@@ -53,13 +51,13 @@ namespace Example9
             PersonModel otherPerson = (PersonModel)obj;
             
             //1. sort by surname
-            if (this.Surname != otherPerson.Surname) return this.Surname.CompareTo(otherPerson.Surname);
+            if (this.SecondName != otherPerson.SecondName) return this.SecondName.CompareTo(otherPerson.SecondName);
             
             //2. sort by name
-            if (this.Name != otherPerson.Name) return this.Name.CompareTo(otherPerson.Name);
+            if (this.FirstName != otherPerson.FirstName) return this.FirstName.CompareTo(otherPerson.FirstName);
             
             //3. sort by telephone number
-            if (this.Telnumber != otherPerson.Telnumber) return this.Telnumber.CompareTo(otherPerson.Telnumber);
+            if (this.TelNumber != otherPerson.TelNumber) return this.TelNumber.CompareTo(otherPerson.TelNumber);
             return -1;
         }
 
