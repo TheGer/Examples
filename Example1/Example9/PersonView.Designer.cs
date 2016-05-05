@@ -49,6 +49,8 @@
             this.personsGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.personsGridView_CellValidating);
             this.personsGridView.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.personsGridView_RowLeave);
             this.personsGridView.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.personsGridView_RowsAdded);
+            this.personsGridView.RowValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.personsGridView_RowValidated);
+            this.personsGridView.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.personsGridView_RowValidating);
             this.personsGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.personsGridView_UserDeletingRow);
             // 
             // panel1

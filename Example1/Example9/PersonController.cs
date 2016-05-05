@@ -57,10 +57,11 @@ namespace Example9
 
         public List<PersonModel> getPersons()
         {
+            syncData();
             return personsList;
         }
 
-        public void addPerson(PersonModel personToAdd)
+        public PersonModel addPerson(PersonModel personToAdd)
         {
 
             using (var db = new PersonContext())
@@ -71,6 +72,7 @@ namespace Example9
             }
 
             syncData();
+            return personToAdd;
         }
 
         public void updatePerson(PersonModel personToUpdate)
@@ -110,6 +112,7 @@ namespace Example9
 
             using (var db = new PersonContext())
             {
+                db.allPersons.Attach(personToDelete);
                 db.allPersons.Remove(personToDelete);
                 db.SaveChanges();
             }
