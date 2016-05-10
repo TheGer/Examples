@@ -77,10 +77,7 @@ namespace Example9
 
         public void updatePerson(PersonModel personToUpdate)
         {
-            /*
-            PersonModel currentPerson = personsList.Find(person => person.TelNumber == personToUpdate.TelNumber && person.Surname == personToUpdate.Surname);
-            currentPerson = personToUpdate;
-            */
+           
             using (var db = new PersonContext())
             {
                 var p = (from person in db.allPersons
@@ -105,10 +102,7 @@ namespace Example9
 
         public void deletePerson(PersonModel personToDelete)
         {
-            /*
-            PersonModel currentPerson = personsList.Find(person => person.Telnumber == personToDelete.Telnumber);
-            personsList.Remove(currentPerson);
-            */
+          
 
             using (var db = new PersonContext())
             {
@@ -135,4 +129,4 @@ namespace Example9
         }
 
     }
-}
+} 
