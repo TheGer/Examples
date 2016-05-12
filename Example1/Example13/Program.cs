@@ -51,37 +51,45 @@ namespace Example13
                 };
 
 
+            Contact myC2 = new Contact
+            {
+                FirstName = "dsdf2",
+                SecondName = "Said2",
+                TelNumber = "12342",
+            };
+
+            Address myAddress1 = new Address
+            {
+                address1 = "ABC2",
+                address2 = "DEF2",
+
+            };
+
+            Address myAddress2 = new Address
+            {
+                address1 = "ABC3",
+                address2 = "DEF3",
+
+            };
+
             c.myContact.Add(myC);
+            c.myContact.Add(myC2);
+
+            myC2.addresses.Add(myAddress1);
+            myC2.addresses.Add(myAddress2);
 
             myC.addresses.Add(myAddress);
 
+            c.SaveChanges();
 
             
-            //c.myAddresses.Add(myAddress);
-
-
-
-            //    myContact.addresses.Add(myAddress);
-
-
-                c.myContact.Add(myC);
-                  
-                c.SaveChanges();
-
-
-
-            
-
-
-
-
 
 
                 //selecting top 2 using Take keyword
                 var contacts = (from a in c.myContact
                               // where a.FirstName.StartsWith("G")
                                orderby a.Id
-                               select a).Take(2);
+                               select a);
 
                 
 
